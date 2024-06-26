@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/marcosgomesneto/bun-devcontainers/tree/main/src/bun-postgresql
+{
+	"name": "Bun & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/itsmechlark/features/act:1": {},
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
+
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+	],
+
+	"shutdownAction": "stopCompose",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"mhutchie.git-graph",
+				"oouo-diogo-perdigao.docthis",
+				"vivaxy.vscode-conventional-commits",
+				"obenjiro.arrr",
+				"usernamehw.errorlens",
+				"mutantdino.resourcemonitor",
+				"GitHub.copilot",
+				"anaer.git-user-profiles-config",
+				"oven.bun-vscode"
+			]
+		}
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// This can be used to network with other containers or with the host.
+	// "forwardPorts": [8080, 5432],
+	"forwardPorts": [5432]
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "bun install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
