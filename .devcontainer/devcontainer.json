@@ -11,7 +11,7 @@
 	},
 
 	"mounts": [
-		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/root/.ssh,type=bind,consistency=cached"
 	],
 
 	"shutdownAction": "stopCompose",
