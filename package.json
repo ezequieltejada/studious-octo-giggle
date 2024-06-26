@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "bun run index.ts",
+    "start:dev": "export TOTAL_PAGES=3 && bun run index.ts",
     "premigrate": "pnpm drizzle-kit generate",
     "migrate": "bun run ./src/db/scripts/migrate.ts"
   },
